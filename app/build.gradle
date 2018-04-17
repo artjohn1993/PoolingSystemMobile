@@ -35,7 +35,13 @@ dependencies {
 
 
     compile "org.jetbrains.anko:anko:0.10.4"
-    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+    compile "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    compile "com.squareup.retrofit2:converter-gson:2.3.0"
+
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+
     implementation "com.squareup.retrofit2:converter-moshi:2.0.0"
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
 }
