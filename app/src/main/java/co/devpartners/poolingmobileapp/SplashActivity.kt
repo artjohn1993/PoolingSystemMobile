@@ -3,6 +3,7 @@ package co.devpartners.poolingmobileapp
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import co.devpartners.poolingmobileapp.database.DataBaseHandler
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -14,8 +15,18 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar!!.hide()
 
         Handler().postDelayed({
-           startActivity<MainActivity>()
-            finish()
+
+            var db = DataBaseHandler(this)
+            var data = db.readData()
+            if(data.size <= 0){
+                startActivity<MainActivity>()
+                finish()
+            }
+            else{
+                startActivity<DashBoardActivity>()
+                finish()
+            }
+
         },2000)
     }
 }
